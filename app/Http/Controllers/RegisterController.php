@@ -15,6 +15,7 @@ class RegisterController extends Controller
     }
 
     public function store(){
+      dd(request()->all());
       request()->validate([
         'name' => 'required|max:255',
         'username' => 'required|max:255',

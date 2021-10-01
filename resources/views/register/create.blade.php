@@ -1,22 +1,48 @@
 @extends('layout')
 @section('content')
-<div class="container">
-  <form>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+<style media="screen">
+  img{
+    width: 100px;
+    height: 100px;
+  }
+  .logged-user-name{
+    font-size: 20px;
+    font-weight: bold;
+    color: blue;
+  }
+
+</style>
+<div class="all-wrapper menu-side with-pattern">
+  <div class="auth-box-w wider">
+    <div class="logged-user-w">
+
+      <div class="logged-user-name">
+         Registration Form
+      </div>
+      <div class="logged-user-role">
+        Laravel 8
+      </div>
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+    <form action="/register" method="POST">
+      @csrf
+      <div class="form-group">
+        <label for=""> Name</label><input name="name" class="form-control" placeholder="Enter email" type="text">
+      </div>
+      <div class="form-group">
+        <label for=""> Username</label><input name="username" class="form-control" placeholder="Enter Username" type="text">
+      </div>
+      <div class="form-group">
+        <label for=""> Email address</label><input name="email" class="form-control" placeholder="Enter email" type="email">
+      </div>
+      <div class="form-group">
+        <label for=""> Password</label><input name="password" class="form-control" placeholder="Enter password" type="Password">
+      </div>
+
+      <div class="buttons-w">
+        <button class="btn btn-primary">Register Now</button>
+      </div>
+    </form>
+  </div>
 </div>
 
 @endsection
