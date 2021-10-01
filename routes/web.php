@@ -17,5 +17,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('register',[RegisterController::class,'create']);
-Route::post('register',[RegisterController::class,'store']);
+Route::get('register',[RegisterController::class,'create'])->middleware('guest');
+Route::post('register',[RegisterController::class,'store'])->middleware('guest');
+Route::post('logout',[RegisterController::class,'destroy']);
+Route::get('login',[RegisterController::class,'login']);
+Route::post('loginUser',[RegisterController::class,'loginUser']);

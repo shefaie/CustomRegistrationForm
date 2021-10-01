@@ -23,20 +23,8 @@
         Laravel 8
       </div>
     </div>
-    <form action="/register" method="POST">
+    <form action="/loginUser" method="POST">
       @csrf
-      <div class="form-group">
-        <label for=""> Name</label><input name="name" class="form-control"  placeholder="Enter email" type="text">
-        @error('name')
-        <div class="help-block form-text with-errors form-control-feedback">{{$message}}</div>
-        @enderror
-      </div>
-      <div class="form-group">
-        <label for=""> Username</label><input name="username" class="form-control" placeholder="Enter Username" type="text">
-        @error('username')
-        <div class="help-block form-text with-errors form-control-feedback">{{$message}}</div>
-        @enderror
-      </div>
       <div class="form-group">
         <label for=""> Email address</label><input name="email" class="form-control" placeholder="Enter email" type="text">
         @error('email')
@@ -51,7 +39,7 @@
       </div>
 
       <div class="buttons-w">
-        <button class="btn btn-primary">Register Now</button>
+        <button class="btn btn-primary">Login Now</button>
       </div><br>
       @if(session()->has('success'))
         <div class="alert alert-success" role="alert" id="success">
